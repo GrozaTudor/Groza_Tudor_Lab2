@@ -9,14 +9,23 @@ namespace Groza_Tudor_Lab2.Models
         public int ID { get; set; }
         [Display(Name = "Book Title")]
         public string? Title { get; set; }
-        public string? Author { get; set; }
+
+        //public string? FirstName { get; set; }
+        //public string? LastName { get; set; }
+
 
         [Column(TypeName = "decimal(6,2)")]
         public decimal Price { get; set; }
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
+
+        [ForeignKey("Publisher")]
         public int? PublisherID { get; set; }
         public Publisher? Publisher { get; set; }
+
+        [ForeignKey("Author")]
+        public int? AuthorID { get; set; }
+        public Author? Author { get; set; }
     } //navigation property
 
 }
