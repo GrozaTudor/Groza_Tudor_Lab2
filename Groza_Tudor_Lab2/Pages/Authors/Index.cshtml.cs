@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Groza_Tudor_Lab2.Data;
 using Groza_Tudor_Lab2.Models;
 
-namespace Groza_Tudor_Lab2.Pages.Author
+namespace Groza_Tudor_Lab2.Pages.Authors
 {
     public class IndexModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace Groza_Tudor_Lab2.Pages.Author
             _context = context;
         }
 
-        public IList<Groza_Tudor_Lab2.Models.Author> Author { get;set; } = default!;
+        public IList<Author> Author { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

@@ -20,17 +20,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="Book.AuthorID" class="control-label">Author</label>
-                <select asp-for="Book.AuthorID" class="form-control" asp-items="ViewBag.AuthorID">
-                </select>
-                @* <select id="AuthorID" name="AuthorID" class="form-control">
-                    <option value="">-- Select Author --</option>
-                    @foreach (var author in authors)
-                    {
-                        <option value="@author.ID">@author.AuthorName</option>
-                    }
-                </select> *@
-
+                <select asp-for="Book.AuthorID" class="form-control" asp-items="ViewBag.AuthorID"></select>
                 <span asp-validation-for="Book.AuthorID" class="text-danger"></span>
+                @* <select id="AuthorID" name="AuthorID" class="form-control">
+                <option value="">-- Select Author --</option>
+                @foreach (var author in authors)
+                {
+                <option value="@author.ID">@author.AuthorName</option>
+                }
+                </select> *@
             </div>
             <div class="form-group">
                 <label asp-for="Book.Price" class="control-label"></label>

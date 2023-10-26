@@ -33,11 +33,12 @@ namespace Groza_Tudor_Lab2.Pages.Books
             var book =  await _context.Book.FirstOrDefaultAsync(m => m.ID == id);
             if (book == null)
             {
+
                 return NotFound();
             }
             Book = book;
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID",
-"PublisherName");
+            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
+            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "FullName");
             return Page();
         }
 
