@@ -15,13 +15,15 @@ namespace Groza_Tudor_Lab2.Models
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
 
-        [ForeignKey("Publisher")]
-        public int? PublisherID { get; set; }
-        public Publisher? Publisher { get; set; }
-
+        //[ForeignKey("Publisher")]
+        
         [ForeignKey("Author")]
         public int? AuthorID { get; set; }
         public Author? Author { get; set; }
+        public int? PublisherID { get; set; }
+        public Publisher? Publisher { get; set; }
+
+        public ICollection<BookCategory>? BookCategories { get; set; }
     } //navigation property
 
 }

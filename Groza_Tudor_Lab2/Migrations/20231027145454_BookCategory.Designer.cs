@@ -4,6 +4,7 @@ using Groza_Tudor_Lab2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Groza_Tudor_Lab2.Migrations
 {
     [DbContext(typeof(Groza_Tudor_Lab2Context))]
-    partial class Groza_Tudor_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20231027145454_BookCategory")]
+    partial class BookCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,6 +54,9 @@ namespace Groza_Tudor_Lab2.Migrations
                     b.Property<int?>("AuthorID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("AuthorID1")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(6,2)");
 
@@ -68,7 +73,7 @@ namespace Groza_Tudor_Lab2.Migrations
 
                     b.HasIndex("AuthorID");
 
-                    b.HasIndex("PublisherID");
+                    b.HasIndex("AuthorID1");
 
                     b.ToTable("Book");
                 });
@@ -132,13 +137,13 @@ namespace Groza_Tudor_Lab2.Migrations
 
             modelBuilder.Entity("Groza_Tudor_Lab2.Models.Book", b =>
                 {
-                    b.HasOne("Groza_Tudor_Lab2.Models.Author", "Author")
+                    b.HasOne("Groza_Tudor_Lab2.Models.Publisher", "Publisher")
                         .WithMany("Books")
                         .HasForeignKey("AuthorID");
 
-                    b.HasOne("Groza_Tudor_Lab2.Models.Publisher", "Publisher")
+                    b.HasOne("Groza_Tudor_Lab2.Models.Author", "Author")
                         .WithMany("Books")
-                        .HasForeignKey("PublisherID");
+                        .HasForeignKey("AuthorID1");
 
                     b.Navigation("Author");
 
