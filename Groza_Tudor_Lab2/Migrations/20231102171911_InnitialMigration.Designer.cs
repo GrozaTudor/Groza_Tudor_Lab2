@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Groza_Tudor_Lab2.Migrations
 {
     [DbContext(typeof(Groza_Tudor_Lab2Context))]
-    [Migration("20231029210545_BookCategory.Designer")]
-    partial class BookCategoryDesigner
+    [Migration("20231102171911_InnitialMigration")]
+    partial class InnitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
