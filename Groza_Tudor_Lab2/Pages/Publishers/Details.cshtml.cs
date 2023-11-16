@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Groza_Tudor_Lab2.Data;
 using Groza_Tudor_Lab2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Groza_Tudor_Lab2.Pages.Publishers
 {

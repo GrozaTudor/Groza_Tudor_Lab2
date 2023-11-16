@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Groza_Tudor_Lab2.Data;
 using Groza_Tudor_Lab2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Groza_Tudor_Lab2.Pages.Publishers
 {
+    [Authorize(Roles = "Admin")]
+
     public class CreateModel : PageModel
     {
         private readonly Groza_Tudor_Lab2.Data.Groza_Tudor_Lab2Context _context;
