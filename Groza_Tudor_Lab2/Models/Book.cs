@@ -8,6 +8,8 @@ namespace Groza_Tudor_Lab2.Models
     {
         public int ID { get; set; }
         [Display(Name = "Book Title")]
+
+        [StringLength(150, MinimumLength = 3, ErrorMessage = "Titlul cărții trebuie să aibă între 3 și 150 de caractere.")]
         public string? Title { get; set; }
 
         [Column(TypeName = "decimal(6,2)")]
